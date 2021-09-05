@@ -1,0 +1,137 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2.0.0",
+    "title": "Magalu Produtos API",
+    "description": "Api para consumir endpoint relacionados aos produtos da Magalu."
+  },
+  "host": "localhost:3003",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Produtos",
+      "description": "Endpoints relacionados aos recursos de produto."
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/produtos/": {
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Endpoint para obter uma lista de produtos.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Lista de produtos encontrada.",
+            "schema": {
+              "$ref": "#/definitions/Produto"
+            }
+          },
+          "400": {
+            "description": "Houve algum problema na requisição."
+          },
+          "404": {
+            "description": "Lista não encontrada."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Endpoint para criar um novo produto.",
+        "parameters": [
+          {
+            "name": "NovoProduto",
+            "in": "body",
+            "description": "Informações do produto",
+            "required": true,
+            "type": "object",
+            "schema": {
+              "$ref": "#/definitions/NovoProduto"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Produto criado"
+          },
+          "400": {
+            "description": "Os campos nome e preço são obrigatórios."
+          }
+        }
+      }
+    },
+    "/fornecedores/": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {
+    "Produto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        },
+        "nome": {
+          "type": "string",
+          "example": "DELL"
+        },
+        "preco": {
+          "type": "number",
+          "example": 5000
+        },
+        "create_at": {
+          "type": "string",
+          "example": "2021-01-09 13:05:36"
+        },
+        "updated_at": {
+          "type": "string",
+          "example": "2021-01-09 13:05:40"
+        }
+      }
+    },
+    "NovoProduto": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string",
+          "example": "Dell"
+        },
+        "preco": {
+          "type": "number",
+          "example": 5000
+        }
+      },
+      "required": [
+        "nome",
+        "preco"
+      ]
+    }
+  }
+}
