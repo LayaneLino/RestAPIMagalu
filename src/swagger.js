@@ -7,7 +7,7 @@ const doc = {
     info:{
         version: '2.0.0',
         title: "Magalu Produtos API",
-        description: "Api para consumir endpoint relacionados aos produtos da Magalu.",
+        description: "Api para consumir endpoints relacionados aos produtos da Magalu com mecanismo de autenticação de usuário.",
 
     },
     host: "localhost:3003",
@@ -19,6 +19,10 @@ const doc = {
         {
         "name": "Produtos",
         "description": "Endpoints relacionados aos recursos de produto."
+        },
+        {
+        "name": "Usuário",
+        "description": "Endpoints relacionados aos recursos de usuário."    
         }
     ],
     definitions: {

@@ -3,7 +3,7 @@
   "info": {
     "version": "2.0.0",
     "title": "Magalu Produtos API",
-    "description": "Api para consumir endpoint relacionados aos produtos da Magalu."
+    "description": "Api para consumir endpoints relacionados aos produtos da Magalu com mecanismo de autenticação de usuário."
   },
   "host": "localhost:3003",
   "basePath": "/",
@@ -11,6 +11,10 @@
     {
       "name": "Produtos",
       "description": "Endpoints relacionados aos recursos de produto."
+    },
+    {
+      "name": "Usuário",
+      "description": "Endpoints relacionados aos recursos de usuário."
     }
   ],
   "schemes": [
@@ -100,15 +104,24 @@
     "/fornecedores/": {
       "get": {
         "tags": [],
-        "description": "",
+        "description": "Endpoint não trabalhado.",
         "parameters": [],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Lista encontrada"
+          },
+          "400": {
+            "description": "Houve algum problema na requisição."
+          }
+        }
       }
     },
     "/usuarios/": {
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Usuário"
+        ],
+        "description": "Endpoint para cadastro do cliente.",
         "parameters": [
           {
             "name": "obj",
@@ -130,19 +143,24 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Usuário cadastrado"
+          },
           "201": {
             "description": "Created"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Houve algum problema na requisição."
           }
         }
       }
     },
     "/usuarios/auth": {
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Usuário"
+        ],
+        "description": "Endpoint para login do cliente, disponibilizando o token de acesso aos recursos de produto.",
         "parameters": [
           {
             "name": "obj",
@@ -162,10 +180,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Usuário logado"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Houve algum problema na requisição."
           },
           "401": {
             "description": "Unauthorized"

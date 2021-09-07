@@ -7,6 +7,19 @@ const JWTSecret = 'afdgdherarDFvtsdrterdSdgtdfzgfdzgfzdsf'
 
 router.post('/', 
     async (req, res) => {
+
+    /*
+        #swagger.tags = ['Usuário']
+        #swagger.description = 'Endpoint para cadastro do cliente.'
+
+        #swagger.responses[200] = {
+        description: 'Usuário cadastrado'
+    }
+        #swagger.responses[400] = {
+        description: 'Houve algum problema na requisição.'
+        }
+    */
+        
     const { nome, email, senha } = req.body
     try {
         await usuario.create({ nome, email, senha })
@@ -21,6 +34,19 @@ router.post('/auth',
     .not().isEmpty()    // não está funcionando
     .withMessage('Campo email é obrigatório!'),
     async (req, res) => {
+
+    /*
+        #swagger.tags = ['Usuário']
+        #swagger.description = 'Endpoint para login do cliente, disponibilizando o token de acesso aos recursos de produto.'
+
+        #swagger.responses[200] = {
+        description: 'Usuário logado'
+    }
+        #swagger.responses[400] = {
+        description: 'Houve algum problema na requisição.'
+        }
+    */
+
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() })

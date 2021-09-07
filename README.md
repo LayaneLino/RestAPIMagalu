@@ -4,7 +4,7 @@
   <h3 align="center">Magalu Produtos API</h3>
 
   <p align="center">
-    Rest API para endpoints do sistema de produtos.
+    Rest API para endpoints de um sistema de produtos com mecanismo de autenticação do cliente.
     <br />
   </p>
 </p>
@@ -44,6 +44,8 @@ Essa é uma API para endpoints de acesso a informações do produto.
 
 O projeto tem uma estrutura de acesso a endpoints que podem ser usados por uma aplicação frontend.
 
+Também possui um sistema de autenticação do cliente.
+
 
 ## Criado com...
 
@@ -77,9 +79,10 @@ Siga as instruções para executar a API:
 <!-- USAGE EXAMPLES -->
 ## Uso
 
-Voce tem acesso aos seguintes endpoints de produto:
+Voce tem acesso aos seguintes endpoints:
 
 [![Swagger de produto][swagger-endpoint-produto]]
+[![Swagger de usuario][swagger-endpoint-usuario]]
 
 <!-- CONTACT -->
 ## Contato
@@ -95,3 +98,4 @@ Projeto: [https://github.com/LayaneLino/RestAPIMagalu](https://github.com/Layane
 <!-- MARKDOWN LINKS & IMAGES -->
 [swagger-completo]: images/swagger-completo.png
 [swagger-endpoint-produto]: images/swagger-endpoint-produto.png
+[swagger-endpoint-usuario]: images/swagger-endpoint-usuario.png
