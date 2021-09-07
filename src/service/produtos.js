@@ -24,5 +24,5 @@ class ProdutoService {
         }
     }
 }
-// npm express-validator
+
 module.exports = ProdutoService

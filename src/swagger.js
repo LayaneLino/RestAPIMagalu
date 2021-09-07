@@ -33,7 +33,15 @@ const doc = {
             $nome: 'Dell',
             $preco: 5000
         }
-    }
+    },
+    securityDefinitions: {
+        apiKeyAuth: {
+            type: "apiKey",
+            in: 'header',
+            name: 'authorization',
+            description: 'Insira seu token aqui.'
+        },
+    },
 }
 
 swaggerAutogen(outputFile, endpointFile, doc)
